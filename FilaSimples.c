@@ -57,6 +57,7 @@ int main() {
     enfileirar(&f, 10);
     enfileirar(&f, 20);
     enfileirar(&f, 30);
+    enfileirar(&f, 40);
 
     if (frente(&f, &valor)) {
         printf("Frente da fila: %d\n\n", valor);
