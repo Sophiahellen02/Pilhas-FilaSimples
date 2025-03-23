@@ -4,7 +4,7 @@
 // Tamanho máximo da pilha
 #define MAX 100
 
-// Pilha
+// Estrutura da pilha com um vetor de inteiros e um índice do topo
 typedef struct {
     int itens[MAX];
     int topo;
@@ -27,6 +27,7 @@ int estaCheia(Pilha *p) {
 
 // Empilha um valor
 int empilhar(Pilha *p, int valor) {
+    // condição de pilha cheia
     if (estaCheia(p)) {
         printf("Pilha cheia!\n");
         return 0;
@@ -37,6 +38,7 @@ int empilhar(Pilha *p, int valor) {
 
 // Desempilha um valor
 int desempilhar(Pilha *p, int *valor) {
+    // condição de pilha vazia
     if (estaVazia(p)) {
         printf("\nPilha vazia!\n");
         return 0;
@@ -47,6 +49,7 @@ int desempilhar(Pilha *p, int *valor) {
 
 // Retorna o valor do topo da pilha
 int topo(Pilha *p, int *valor) {
+    // condição de pilha vazia
     if (estaVazia(p)) {
         printf("Pilha vazia!\n");
         return 0;
@@ -57,13 +60,13 @@ int topo(Pilha *p, int *valor) {
 
 // Função principal
 int main() {
-    Pilha p; // Declara uma pilha
+    Pilha p; // Declara uma pilha p
     int valor;
 
     inicializar(&p);
 
-    empilhar(&p, 10); // Empilha valores
-    empilhar(&p, 20);
+    empilhar(&p, 10); // Empilha valores na pilha
+    empilhar(&p, 20);   
     empilhar(&p, 30);
     empilhar(&p, 40);
 
