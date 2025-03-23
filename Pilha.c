@@ -12,17 +12,17 @@ typedef struct {
 
 // Inicializa a pilha
 void inicializar(Pilha *p) {
-    p->topo = -1;
+    p->topo = -1; // Inicializa o topo com -1
 }
 
 // Verifica se a pilha está vazia
 int estaVazia(Pilha *p) {
-    return p->topo == -1;
+    return p->topo == -1; // O topo é -1 quando a pilha está vazia
 }
 
 // Verifica se a pilha está cheia
 int estaCheia(Pilha *p) {
-    return p->topo == MAX - 1;
+    return p->topo == MAX - 1; // O topo é o índice do último elemento
 }
 
 // Empilha um valor
@@ -31,7 +31,7 @@ int empilhar(Pilha *p, int valor) {
         printf("Pilha cheia!\n");
         return 0;
     }
-    p->itens[++(p->topo)] = valor;
+    p->itens[++(p->topo)] = valor; // Incrementa o topo e insere o valor
     return 1;
 }
 
@@ -41,7 +41,7 @@ int desempilhar(Pilha *p, int *valor) {
         printf("\nPilha vazia!\n");
         return 0;
     }
-    *valor = p->itens[(p->topo)--];
+    *valor = p->itens[(p->topo)--]; // Decrementa o topo e retorna o valor
     return 1;
 }
 
@@ -51,18 +51,18 @@ int topo(Pilha *p, int *valor) {
         printf("Pilha vazia!\n");
         return 0;
     }
-    *valor = p->itens[p->topo];
+    *valor = p->itens[p->topo]; // Retorna o valor do topo
     return 1;
 }
 
 // Função principal
 int main() {
-    Pilha p;
+    Pilha p; // Declara uma pilha
     int valor;
 
     inicializar(&p);
 
-    empilhar(&p, 10);
+    empilhar(&p, 10); // Empilha valores
     empilhar(&p, 20);
     empilhar(&p, 30);
     empilhar(&p, 40);
